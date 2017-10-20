@@ -18,7 +18,7 @@ getData();
 function search(query) {
     query = removeDiacritics(query).toLocaleLowerCase().replace(/[^0-9a-z]+/g,"");
     if (json.brands.hasOwnProperty(query)) {
-        return json.brands[query][0]
+        return json.brands[query]
     }
     
     for(var i = 0; i < brandsArray.length; i++)
