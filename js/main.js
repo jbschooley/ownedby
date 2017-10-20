@@ -21,10 +21,8 @@ function search(query) {
         return json.brands[query]
     }
     
-    for(var i = 0; i < brandsArray.length; i++)
-    {
-        if(brandsArray[i].includes(query))
-        {
+    for(var i = 0; i < brandsArray.length; i++) {
+        if(brandsArray[i].includes(query)) {
             return json.brands[brandsArray[i]]
         }
     }
@@ -54,7 +52,9 @@ function fixText(text, num) {
         var val = [lines2[i], num];
         out[key] = val;
     }
-    console.log(JSON.stringify(out));
+    out = JSON.stringify(out);
+    out = out.replace(/^{/g, "").replace(/}$/g, "").replace(/,"/g, ",\n\"");
+    console.log(out);
 }
 function removeDiacritics (str) {
     
